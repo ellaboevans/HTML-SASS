@@ -14,7 +14,24 @@ function PageTransitions(){
     }
     //Sections Active
     allSections.addEventListener('click', (e) =>{
-        console.log (e.target);
+        const id = e.target.dataset.id;
+        if(id){
+
+            //remove selected from the other btns
+             SecBtns.forEach((btns) =>{
+                 btns.classList.remove('active')
+             })
+             e.target.classList.add('active')
+
+            //hide other sections
+            sections.forEach((section)=>{
+                section.classList.remove('active')
+            })
+
+            const element = document.getElementById(id);
+            element.classList.add('active');
+            
+        }
     })
 }
 
