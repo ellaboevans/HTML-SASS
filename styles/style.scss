@@ -57,22 +57,40 @@ section{
 .sec1{
   display: none;
   transform: translateY(0) scale(1);
+  padding: 0;
+
 }
 .sec2{
   display: none;
   transform: translateY(0) scale(1);
+  
 }
 .sec3{
   display: none;
   transform: translateY(0) scale(1);
+  
 }
 .sec4{
   display: none;
   transform: translateY(0) scale(1);
+ 
 }
 .sec5{
   display: none;
   transform: translateY(0) scale(1);
+}
+
+.active{
+  display: block;
+  animation: scaleAnim 1s ease-in-out;
+  @keyframes scaleAnim{
+    0%{
+        transform: translateY(-100%) scaleY(0)
+    }
+    100%{
+        transform: translateY(0) scaleY(1) 
+    }
+  }
 }
 
 //controls
@@ -109,3 +127,31 @@ section{
       }
     }
 }
+
+/*Header-content*/
+.header-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+    .left-header{
+      display: flex;
+      align-items: center;
+      position: relative;
+      .h-shape{
+        transition: var(--transition-1);
+        width: 65%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        clip-path: polygon(0 0, 43% 0, 75% 100%, 0% 100%);
+      }
+    }
+}
+
+
+
+
+/*Independed components*/
