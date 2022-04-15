@@ -12,7 +12,12 @@ function PageTransitions(){
             this.className += ' active-btn';
         })
     }
+    //Sections Active
+    allSections.addEventListener('click', (e) =>{
+        console.log (e.target);
+    })
 }
+
 
 PageTransitions();
 
